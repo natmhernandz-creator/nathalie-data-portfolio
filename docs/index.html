@@ -1,1 +1,135 @@
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Testing Coverage Tracker | Portfolio&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Stdlib-only Python tool for SIS/ETL test coverage and leadership reporting." /&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--bg: #0b1020;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--panel: rgba(255,255,255,0.06);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--panel-strong: rgba(255,255,255,0.12);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--text: #e6e8ee;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--muted: #a7adbb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--accent: #6ee7ff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--accent-2: #a78bfa;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--good: #34d399;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--warn: #fbbf24;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--bad: #fb7185;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--radius: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--shadow: 0 12px 40px rgba(0,0,0,0.45);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-synthesis: style;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color-scheme: dark;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>*{ box-sizing: border-box; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin:0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background:</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(1200px 600px at 80% -10%, rgba(167,139,250,0.25), transparent 60%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(1000px 800px at 10% 10%, rgba(110,231,255,0.20), transparent 55%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var(--bg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.55;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>a{ color: inherit; text-decoration: none; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.wrap{ max-width: 1100px; margin: 0 auto; padding: 20px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Navbar */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: sticky; top:0; z-index:10;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(10px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(11,16,32,0.7);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid rgba(255,255,255,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav-inner{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; align-items:center; justify-content:space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 6px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:flex; align-items:center; gap:10px; font-weight: 700; letter-spacing:0.2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand-dot{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width:10px; height:10px; border-radius:999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(120deg, var(--accent), var(--accent-2));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 0 14px rgba(110,231,255,0.9);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav-links{ display:flex; gap:14px; font-size: 14px; color: var(--muted); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav-links a:hover{ color: var(--text); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Hero */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 26px 0 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 900px){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.hero{ grid-template-columns: 1fr; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--panel);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(255,255,255,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: var(--radius);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: var(--shadow);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-card{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-glow{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position:absolute; inset:-60% -20% auto auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 380px; height: 380px; border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: radial-gradient(circle, rgba(110,231,255,0.35), transparent 60%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>filter: blur(20px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>pointer-events:none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.badge-row{ display:flex; gap:8px; flex-wrap:wrap; margin: 6px 0 14px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.badge{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px; color: #dfe3ee;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(255,255,255,0.10);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 4px 8px; border-radius: 999px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(28px, 4vw, 40px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.2px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 0 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.sub{ color: var(--muted); font-size: 16px; margin-bottom: 14px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cta-row{ display:flex; gap:10px; flex-wrap: wrap; margin-top: 10px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:inline-flex; align-items:center; justify-content:center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap:8px; padding: 10px 14px; border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--panel-strong);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(255,255,255,0.18);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600; font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: 160ms ease;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor:pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>user-select:none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn:hover{ transform: translateY(-1px); border-color: rgba(255,2</p>
+</body>
+</html>
